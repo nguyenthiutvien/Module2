@@ -1,4 +1,4 @@
-package ss4_inheritance.exercise2;
+package ss4_inheritance.exercise1;
 
 import ss4_inheritance.exercise1.NewPhone;
 import ss4_inheritance.exercise1.OldPhone;
