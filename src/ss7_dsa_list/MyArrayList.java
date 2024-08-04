@@ -81,36 +81,6 @@ public class MyArrayList {
         size++;
     }
 
-//    d. Thay the tai vi tri index
-//    public  void set(int index, int e ){
-//        if (index <0 || index > size){
-//            System.out.println(" index is not in range");
-//            return;
-//        }
-//        if (size == capacity){
-//            this.capacity*=1.5;
-//            if (size == capacity){
-//                capacity++;
-//            }
-//            int[] newArr = new int[this.capacity];
-//
-//            for(int i = 0; i < index; i++){
-//                newArr[i] = arr[i];
-//            }
-//            newArr[index] = e;
-//
-//            for (int i = index; i < size; i++){
-//                newArr[i+1] = arr[i];
-//            }
-//            arr = newArr;
-//        } else {
-//            for (int i = size; i > index; i--){
-//                arr[i] = arr[i - 1];
-//            }
-//            arr[index] = e;
-//        }
-//        size++;
-//    }
 //    d. Thay the phan tu tai index
     public void set (int index, int e){
         if (index < 0 || index >=size){
