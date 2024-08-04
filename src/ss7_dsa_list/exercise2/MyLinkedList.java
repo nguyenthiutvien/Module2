@@ -1,4 +1,4 @@
-package ss7_dsa_list;
+package ss7_dsa_list.exercise2;
 
 public class MyLinkedList {
     private class Node {

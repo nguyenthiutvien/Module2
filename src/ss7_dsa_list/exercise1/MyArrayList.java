@@ -1,4 +1,4 @@
-package ss7_dsa_list;
+package ss7_dsa_list.exercise1;
 
 import java.util.concurrent.LinkedBlockingDeque;
 

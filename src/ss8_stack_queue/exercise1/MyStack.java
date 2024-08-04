@@ -1,6 +1,6 @@
-package ss8_stack_queue;
+package ss8_stack_queue.exercise1;
 
-public class MyQueue<E> {
+public class MyStack<E> {
     private  int capacity;
     private Object[] arr;
 
@@ -8,10 +8,10 @@ public class MyQueue<E> {
 
     private  Object[] emptyArray = {};
 
-    public  MyQueue(){
+    public  MyStack(){
         arr = emptyArray;
     }
-    public MyQueue(int capacity){
+    public MyStack(int capacity){
         this.capacity = capacity;
         this.arr = new Object[this.capacity];
     }
@@ -38,7 +38,7 @@ public class MyQueue<E> {
         arr[size] = element;
         size++;
     }
-    //    b. peek(): lay ra xem
+//    b. peek(): lay ra xem
     public E peek(){
         if (size ==0){
             System.out.println("Empty");
@@ -46,25 +46,21 @@ public class MyQueue<E> {
         }
         return (E) arr[size-1];
     }
-    //    c. pop()
-    public E poll(){
+//    c. pop()
+    public E pop(){
         if (size ==0){
             System.out.println(" Empty");
         }
-        E element = (E) arr[0];
-        for (int i = 0; i < size -1; i++){
-            arr[i] = arr[i+1];
-        }
-
+        E element = (E) arr[size-1];
         arr[size - 1] = null;
         size--;
         return  element;
     }
-    //    d. isEmpty()
+//    d. isEmpty()
     public boolean isEmpty(){
         return size ==0;
     }
-    //    e.size()
+//    e.size()
     public  int size(){
         return size;
     }

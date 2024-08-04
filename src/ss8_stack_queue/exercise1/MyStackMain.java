@@ -1,4 +1,4 @@
-package ss8_stack_queue;
+package ss8_stack_queue.exercise1;
 
 public class MyStackMain {
     public static void main(String[] args) {

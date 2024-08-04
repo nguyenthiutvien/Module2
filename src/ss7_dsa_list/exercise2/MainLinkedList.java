@@ -1,4 +1,4 @@
-package ss7_dsa_list;
+package ss7_dsa_list.exercise2;
 
 public class MainLinkedList {
     public static void main(String[] args) {

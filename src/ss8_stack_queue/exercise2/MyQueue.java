@@ -1,8 +1,6 @@
-package ss8_stack_queue;
+package ss8_stack_queue.exercise2;
 
-import ss7_dsa_list.MyLinkedList;
-
-public class MyStack<E> {
+public class MyQueue<E> {
     private  int capacity;
     private Object[] arr;
 
@@ -10,10 +8,10 @@ public class MyStack<E> {
 
     private  Object[] emptyArray = {};
 
-    public  MyStack(){
+    public  MyQueue(){
         arr = emptyArray;
     }
-    public MyStack(int capacity){
+    public MyQueue(int capacity){
         this.capacity = capacity;
         this.arr = new Object[this.capacity];
     }
@@ -40,7 +38,7 @@ public class MyStack<E> {
         arr[size] = element;
         size++;
     }
-//    b. peek(): lay ra xem
+    //    b. peek(): lay ra xem
     public E peek(){
         if (size ==0){
             System.out.println("Empty");
@@ -48,21 +46,25 @@ public class MyStack<E> {
         }
         return (E) arr[size-1];
     }
-//    c. pop()
-    public E pop(){
+    //    c. pop()
+    public E poll(){
         if (size ==0){
             System.out.println(" Empty");
         }
-        E element = (E) arr[size-1];
+        E element = (E) arr[0];
+        for (int i = 0; i < size -1; i++){
+            arr[i] = arr[i+1];
+        }
+
         arr[size - 1] = null;
         size--;
         return  element;
     }
-//    d. isEmpty()
+    //    d. isEmpty()
     public boolean isEmpty(){
         return size ==0;
     }
-//    e.size()
+    //    e.size()
     public  int size(){
         return size;
     }
