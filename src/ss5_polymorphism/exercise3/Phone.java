@@ -2,7 +2,7 @@ package ss5_polymorphism.exercise3;
 
 import java.util.Scanner;
 
-public class Phone {
+public abstract class Phone {
     private String id;
     private  String name;
     private double price;
@@ -41,6 +41,7 @@ public class Phone {
         System.out.println("Manufacturer: " + this.manufacturer);
     }
 
+    public abstract double calculateTotalPrice();
     public String getId() {
         return id;
     }

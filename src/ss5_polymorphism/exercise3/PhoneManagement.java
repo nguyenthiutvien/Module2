@@ -54,6 +54,14 @@ public class PhoneManagement {
                     case 6:
                         search();
                         break;
+                    case 7:
+                        System.out.println("Total price: " + calculateBill());
+                        break;
+                    case 8:
+                        System.out.print(" Enter percent discount: ");
+                        double percent = Double.parseDouble(scanner.nextLine());
+                        applyDiscount(percent);
+                        break;
                     case 9:
                         return;
                     default:
@@ -532,4 +540,18 @@ public class PhoneManagement {
         }
     }
 
+    public static double calculateBill(){
+        double total = 0;
+        for ( Phone phone : phones){
+            total += phone.calculateTotalPrice();
+        }
+        return  total;
+    }
+    public  static  void applyDiscount (double percent){
+        for (Phone phone : phones) {
+            if (phone instanceof  OldPhone ){
+                ((OldPhone) phone).applyDiscount(percent);
+            }
+        }
+    }
 }

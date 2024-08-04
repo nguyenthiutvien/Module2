@@ -2,7 +2,7 @@ package ss5_polymorphism.exercise3;
 
 import java.util.Scanner;
 
-public class OldPhone extends Phone {
+public class OldPhone extends Phone implements Discountable {
     private int battery;
     private String description;
 
@@ -31,6 +31,16 @@ public class OldPhone extends Phone {
         super.output();
         System.out.println("Battery (%) " + this.battery);
         System.out.println("Description: " + this.description);
+    }
+
+    @Override
+    public double calculateTotalPrice(){
+        return  getPrice();
+    }
+    @Override
+    public void applyDiscount(double percentDiscount) {
+        double discountedPrice = getPrice() * (1 - percentDiscount / 100.0);
+        setPrice(discountedPrice);
     }
 
     public int getBattery() {
