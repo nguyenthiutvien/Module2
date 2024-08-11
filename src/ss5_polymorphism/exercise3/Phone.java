@@ -1,8 +1,10 @@
 package ss5_polymorphism.exercise3;
 
+import ss5_polymorphism.exercise3.validation.PhoneValidation;
+
 import java.util.Scanner;
 
-public abstract class Phone {
+public abstract class Phone implements  Comparable<Phone>{
     private String id;
     private  String name;
     private double price;
@@ -20,17 +22,22 @@ public abstract class Phone {
         this.manufacturer = manufacturer;
     }
     public  void input(){
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Enter name phone: ");
+//        this.name = scanner.nextLine();
+//
+//        System.out.print("Enter price: ");
+//        this.price = Double.parseDouble(scanner.nextLine());
+//        System.out.print("Enter warranty: ");
+//        this.warranty = Integer.parseInt(scanner.nextLine());
+//        System.out.print("Enter manufacter: ");
+//        this.manufacturer = scanner.nextLine();
 
-        System.out.print("Enter name phone: ");
-        this.name = scanner.nextLine();
-
-        System.out.print("Enter price: ");
-        this.price = Double.parseDouble(scanner.nextLine());
-        System.out.print("Enter warranty: ");
-        this.warranty = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter manufacter: ");
-        this.manufacturer = scanner.nextLine();
+         this.name = PhoneValidation.inputName("Name");
+        this.price = PhoneValidation.inputPrice("Price");
+        this.warranty = PhoneValidation.inputWarranty("Warranty");
+        this.manufacturer = PhoneValidation.inputManufacturer("Manufacturer");
 
     }
     public void output(){
@@ -42,6 +49,16 @@ public abstract class Phone {
     }
 
     public abstract double calculateTotalPrice();
+
+
+    @Override
+    public int compareTo(Phone phone){
+        return Double.compare(this.getPrice(), phone.price);
+    }
+    @Override
+    public String toString(){
+        return String.format("%s, %s, %s, %s, %s", id, name, price, warranty, manufacturer);
+    }
     public String getId() {
         return id;
     }

@@ -1,5 +1,7 @@
 package ss5_polymorphism.exercise3;
 
+import ss5_polymorphism.exercise3.validation.PhoneValidation;
+
 import java.util.Scanner;
 
 public class OldPhone extends Phone implements Discountable {
@@ -17,14 +19,15 @@ public class OldPhone extends Phone implements Discountable {
     @Override
     public void input(){
         super.input();
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter batterry (%): ");
-        this.battery = Integer.parseInt(scanner.nextLine());
-
-        System.out.print("Enter description: ");
-        this.description = scanner.nextLine();
-
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Enter batterry (%): ");
+//        this.battery = Integer.parseInt(scanner.nextLine());
+//
+//        System.out.print("Enter description: ");
+//        this.description = scanner.nextLine();
+            this.battery = PhoneValidation.inputBatteryPercentage("Battery");
+            this.description = PhoneValidation.inputDescription("Description");
     }
     @Override
     public  void  output(){
@@ -32,7 +35,10 @@ public class OldPhone extends Phone implements Discountable {
         System.out.println("Battery (%) " + this.battery);
         System.out.println("Description: " + this.description);
     }
-
+    @Override
+    public String toString(){
+            return super.toString() + String.format(", %s, %s", battery, description);
+    }
     @Override
     public double calculateTotalPrice(){
         return  getPrice();

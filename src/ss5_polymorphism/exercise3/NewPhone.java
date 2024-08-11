@@ -1,5 +1,7 @@
 package ss5_polymorphism.exercise3;
 
+import ss5_polymorphism.exercise3.validation.PhoneValidation;
+
 import java.util.Scanner;
 
 public class NewPhone extends Phone {
@@ -15,14 +17,19 @@ public class NewPhone extends Phone {
     @Override
     public void input(){
         super.input();
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter quantity: ");
-        this.quantity = scanner.nextInt();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Enter quantity: ");
+//        this.quantity = scanner.nextInt();
+        this.quantity = PhoneValidation.inputQuantity("Quantity");
     }
     @Override
     public void output(){
         super.output();
         System.out.println("Quantity: " + this.quantity);
+    }
+    @Override
+    public String toString(){
+        return super.toString() + String.format(",,, %s" , quantity);
     }
     @Override
     public  double calculateTotalPrice(){
