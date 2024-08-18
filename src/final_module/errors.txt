@@ -1,0 +1,3 @@
+Dòng 2: Sai quy định mức phí
+Dòng 2: Sai quy định về gói bảo hiểm
+Dòng 3: Sai quy định ngày sinh

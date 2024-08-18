@@ -1,0 +1,4 @@
+Dòng 1: Chứa thông tin thừa hoặc thiếu đối với gói bảo hiểm tử vong
+Dòng 2: Sai quy định ngày sinh
+Dòng 2: Sai định dạng dữ liệu
+Dòng 3: Chứa thông tin thừa hoặc thiếu đối với gói bảo hiểm theo thời hạn
